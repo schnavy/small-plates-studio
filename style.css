@@ -57,8 +57,8 @@ h2, h3 {
 
 .move-container {
     div, h2, h3 {
-        margin-left: 0rem;
-        transition: 800ms ease-in-out;
+        margin-left: 0;
+        transition: 600ms ease-in-out;
     }
 
     &.work {

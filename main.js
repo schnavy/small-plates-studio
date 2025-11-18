@@ -85,24 +85,6 @@ const mathFunctions = [
             return (1 - Math.sin(t * Math.PI)) * maxMargin * 0.7 + maxMargin * 0.3;
         }
     },
-    {
-        name: 'stepUp',
-        calc: (index, maxIndex, maxMargin) => {
-            // Discrete steps
-            const steps = 4;
-            const stepSize = maxMargin / steps;
-            return Math.floor((index / maxIndex) * steps) * stepSize;
-        }
-    },
-    {
-        name: 'stepDown',
-        calc: (index, maxIndex, maxMargin) => {
-            // Reverse discrete steps
-            const steps = 4;
-            const stepSize = maxMargin / steps;
-            return maxMargin - Math.floor((index / maxIndex) * steps) * stepSize;
-        }
-    },
 ];
 
 window.addEventListener('load', () => {
