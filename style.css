@@ -1,31 +1,35 @@
 @font-face {
-  font-family: "GTPMT";
-  src: url("fonts/GT-Pressura-Text-Trial.woff2") format("woff2");
-  font-weight: normal;
-  font-display: swap;
+    font-family: "GTPMT";
+    src: url("fonts/GTPressuraLCGV-Text.woff2") format("woff2");
+    font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "GTPMT";
-  src: url("fonts/GT-Pressura-Regular-Trial.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+    font-family: "GTPMT";
+    src: url("fonts/GT-Pressura-Regular-Trial.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
 }
 
 :root {
-  --background-color: rgb(255, 255, 255);
-  --text-color: rgb(102, 41, 0);
+    --background-color: rgb(255, 255, 255);
+    --text-color: rgb(102, 41, 0);
 }
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "GTPMT", sans-serif;
-  padding: 1rem;
+    font-family: "GTPMT", sans-serif;
+    padding: 1rem;
+    color: var(--text-color);
+    min-height: 100vh;
+    position: relative;
 }
 
 p,
@@ -33,28 +37,48 @@ h1,
 h2,
 h3,
 h4 {
-  font-size: 1rem !important;
-  font-weight: 400 !important;
-  max-width: 700px;
-  text-wrap: balance;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    max-width: 700px;
+    text-wrap: balance;
 }
 
 p {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-/* .frame {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-} */
+h2, h3 {
+    margin-top: 0.5rem;
+}
 
-.plate {
-  margin: 0.2rem;
-  min-width: 1rem;
-  width: 1rem;
-  height: 1rem;
-  background-color: rgb(195, 195, 195);
-  border-radius: 100px;
-  margin-bottom: 2rem;
+.no-break {
+    white-space: nowrap;
+}
+
+.move-container {
+    div, h2, h3 {
+        margin-left: 0rem;
+        transition: 800ms ease-in-out;
+    }
+
+    &.work {
+        div, h2, h3 {
+            margin-left: 1rem
+        }
+    }
+
+    &.friends {
+        div, h2, h3 {
+            margin-left: 2rem
+        }
+    }
+}
+
+.plate img {
+    min-width: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(195, 195, 195);
+    border-radius: 100px;
+    margin-bottom: 2rem;
 }
