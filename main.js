@@ -87,23 +87,30 @@ const mathFunctions = [
     },
 ];
 
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        moveContainers.forEach(container => {
-            let lines = container.querySelectorAll('div, h2, h3');
-            const selectedFunc = mathFunctions[Math.floor(Math.random() * mathFunctions.length)];
+function animateContainers() {
+    moveContainers.forEach(container => {
+        let lines = container.querySelectorAll('div, h2, h3');
+        const selectedFunc = mathFunctions[Math.floor(Math.random() * mathFunctions.length)];
 
-            const maxMarginVw = 20;
-            container.dataset.mathFunction = selectedFunc.name;
+        const maxMarginVw = 20;
+        container.dataset.mathFunction = selectedFunc.name;
 
-            console.log('Juhu:', selectedFunc.name);
-            console.log('Lines:', lines.length);
+        console.log('Juhu:', selectedFunc.name);
+        console.log('Lines:', lines.length);
 
-            lines.forEach((line, index) => {
-                // Calculate margin using the selected function
-                const marginVw = selectedFunc.calc(index, lines.length - 1, maxMarginVw);
-                line.style.marginLeft = marginVw + 'vw';
-            });
+        lines.forEach((line, index) => {
+            // Calculate margin using the selected function
+            const marginVw = selectedFunc.calc(index, lines.length - 1, maxMarginVw);
+            line.style.marginLeft = marginVw + 'vw';
         });
+    });
+}
+
+window.addEventListener('load', () => {
+    // Run animation initially after 1 second
+    setTimeout(() => {
+        animateContainers();
+        // Repeat every 20 seconds
+        setInterval(animateContainers, 10000);
     }, 1000);
 });
