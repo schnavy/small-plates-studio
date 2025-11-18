@@ -43,6 +43,16 @@ h4 {
     text-wrap: balance;
 }
 
+@media (max-width: 900px ) {
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-wrap: pretty;
+    }
+}
+
 p {
     margin-bottom: 0.5rem;
 }
